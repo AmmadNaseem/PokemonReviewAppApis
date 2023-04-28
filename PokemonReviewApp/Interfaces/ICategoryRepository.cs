@@ -1,0 +1,17 @@
+﻿using AutoMapper.Configuration.Conventions;
+using PokemonReviewApp.Models;
+
+namespace PokemonReviewApp.Interfaces
+{
+    public interface ICategoryRepository
+    {
+        ICollection<Category>GetCategories();
+        Category GetCategory(int id);
+        ICollection<Pokemon> GetPokemonByCategory(int categoryId);
+        bool CategoryExist(int id); //it checking something exist it make validation easier.
+        bool CreateCategory(Category category);
+        bool UpdateCategory(Category category);
+        bool DeleteCategory(Category category);
+        bool Save();
+    }
+}
